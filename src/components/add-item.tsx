@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "./ui/button";
-import { PlusIcon, ShoppingCart } from "lucide-react";
+import {  ShoppingCart } from "lucide-react";
 import { Input } from "./ui/input";
 import { useItems } from "./items-provider";
 
