@@ -1,6 +1,12 @@
 import { safeJsonParse } from "@/helpers/json";
 import Item from "@/types/Item";
-import { createContext, useState, PropsWithChildren, useContext } from "react";
+import {
+  createContext,
+  useState,
+  PropsWithChildren,
+  useContext,
+  useEffect,
+} from "react";
 
 type IItemsContext = {
   items: Item[];
@@ -27,18 +33,16 @@ export const ItemsContextProvider = ({ children }: PropsWithChildren) => {
     safeJsonParse(localStorage.getItem(SHOPPING_KART_KEY)) ?? []
   );
 
-  const addItem = (item: Item) => {
-    const itemsAdded = [...items, item];
+  useEffect(() => {
+    localStorage.setItem(SHOPPING_KART_KEY, JSON.stringify(items));
+  }, [items]);
 
-    setItems(itemsAdded);
-    localStorage.setItem(SHOPPING_KART_KEY, JSON.stringify(itemsAdded));
+  const addItem = (item: Item) => {
+    setItems([...items, item]);
   };
 
   const removeItem = (index: number) => {
-    const itemsRemoved = items.filter((_, i) => i !== index);
-
-    setItems(itemsRemoved);
-    localStorage.setItem(SHOPPING_KART_KEY, JSON.stringify(itemsRemoved));
+    setItems(items.filter((_, i) => i !== index));
   };
 
   return (
