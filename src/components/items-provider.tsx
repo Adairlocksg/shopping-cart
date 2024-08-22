@@ -12,6 +12,7 @@ type IItemsContext = {
   items: Item[];
   addItem: (item: Item) => void;
   removeItem: (index: number) => void;
+  checkItem: (index: number) => void;
 };
 
 const SHOPPING_KART_KEY = "shopping_cart_items";
@@ -45,8 +46,16 @@ export const ItemsContextProvider = ({ children }: PropsWithChildren) => {
     setItems(items.filter((_, i) => i !== index));
   };
 
+  const checkItem = (index: number) => {
+    setItems(
+      items.map((item, i) =>
+        i === index ? { ...item, checked: !item.checked } : item
+      )
+    );
+  };
+
   return (
-    <ItemsContext.Provider value={{ items, addItem, removeItem }}>
+    <ItemsContext.Provider value={{ items, addItem, removeItem, checkItem }}>
       {children}
     </ItemsContext.Provider>
   );

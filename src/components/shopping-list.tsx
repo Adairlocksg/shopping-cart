@@ -6,7 +6,12 @@ const ShoppingList = () => {
   return (
     <div className="flex flex-col w-full max-h-full overflow-auto">
       {items.map((item, index) => (
-        <ItemList key={index} index={index} label={item.label} />
+        <ItemList
+          key={index}
+          index={index}
+          label={item.label}
+          checked={item.checked}
+        />
       ))}
     </div>
   );
