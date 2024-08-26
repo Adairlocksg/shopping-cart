@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Checkbox } from "./ui/checkbox";
 import { Label } from "./ui/label";
 import { TrashIcon } from "lucide-react";
 import { useItems } from "./items-provider";
