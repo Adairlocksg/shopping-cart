@@ -51,6 +51,11 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        'checkbox-border': 'hsl(350, 40%, 50%)',
+        'checkbox-background': 'hsl(350, 93%, 84%)',
+        'checkbox-checked-background': 'hsl(350, 93%, 70%)',
+        'checkbox-checked-border': 'hsl(350, 50%, 40%)',
+        'checkbox-checked-icon': 'hsl(350, 93%, 20%)'
       },
       borderRadius: {
         lg: "var(--radius)",

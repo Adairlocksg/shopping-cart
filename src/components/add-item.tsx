@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "./ui/button";
-import { ShoppingCart } from "lucide-react";
+import { PlusIcon } from "lucide-react";
 import { Input } from "./ui/input";
 import { useItems } from "./items-provider";
 
@@ -24,7 +24,7 @@ const AddItem = () => {
       />
       <Button className="w-full sm:w-auto gap-2" onClick={handleAddItem}>
         Adicionar
-        <ShoppingCart size={20} />
+        <PlusIcon size={20} />
       </Button>
     </div>
   );

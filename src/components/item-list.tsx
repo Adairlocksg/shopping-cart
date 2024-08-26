@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { Checkbox } from "./ui/checkbox";
 import { Label } from "./ui/label";
-import { XIcon } from "lucide-react";
+import { TrashIcon } from "lucide-react";
 import { useItems } from "./items-provider";
+import { Button } from "./ui/button";
+import CheckboxBase from "./ui/base/checkbox-base";
 
 type Props = {
   index: number;
@@ -22,7 +24,7 @@ const ItemList = ({ index, label, checked: checkedProp }: Props) => {
 
   return (
     <div className="flex gap-2 items-center w-full my-5">
-      <Checkbox
+      <CheckboxBase
         id={`${label}_${index}`}
         checked={checked}
         onClick={handleCheckItem}
@@ -33,7 +35,9 @@ const ItemList = ({ index, label, checked: checkedProp }: Props) => {
       >
         {label}
       </Label>
-      <XIcon className="cursor-pointer" onClick={() => removeItem(index)} />
+      <Button variant="destructive" onClick={() => removeItem(index)}>
+        <TrashIcon /* size={20} */ />
+      </Button>
     </div>
   );
 };
