@@ -13,6 +13,7 @@ type IItemsContext = {
   addItem: (item: Item) => void;
   removeItem: (index: number) => void;
   checkItem: (index: number) => void;
+  removeAllItems: () => void;
 };
 
 const SHOPPING_KART_KEY = "shopping_cart_items";
@@ -46,6 +47,10 @@ export const ItemsContextProvider = ({ children }: PropsWithChildren) => {
     setItems(items.filter((_, i) => i !== index));
   };
 
+  const removeAllItems = () => {
+    setItems([]);
+  };
+
   const checkItem = (index: number) => {
     setItems(
       items.map((item, i) =>
@@ -55,7 +60,9 @@ export const ItemsContextProvider = ({ children }: PropsWithChildren) => {
   };
 
   return (
-    <ItemsContext.Provider value={{ items, addItem, removeItem, checkItem }}>
+    <ItemsContext.Provider
+      value={{ items, addItem, removeItem, checkItem, removeAllItems }}
+    >
       {children}
     </ItemsContext.Provider>
   );

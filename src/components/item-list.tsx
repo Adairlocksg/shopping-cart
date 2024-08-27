@@ -4,6 +4,7 @@ import { TrashIcon } from "lucide-react";
 import { useItems } from "./items-provider";
 import { Button } from "./ui/button";
 import CheckboxBase from "./ui/base/checkbox-base";
+import ConfirmDialogBase from "./ui/base/confirm-dialog-base";
 
 type Props = {
   index: number;
@@ -34,9 +35,16 @@ const ItemList = ({ index, label, checked: checkedProp }: Props) => {
       >
         {label}
       </Label>
-      <Button variant="destructive" onClick={() => removeItem(index)}>
-        <TrashIcon /* size={20} */ />
-      </Button>
+      <ConfirmDialogBase
+        title="Você tem certeza que deseja excluir esse item?"
+        description=" O item será excluido permanentemente."
+        trigger={
+          <Button variant="destructive">
+            <TrashIcon />
+          </Button>
+        }
+        onConfirm={() => removeItem(index)}
+      />
     </div>
   );
 };
