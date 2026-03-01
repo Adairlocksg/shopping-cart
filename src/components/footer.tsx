@@ -8,7 +8,7 @@ import Question from "./question";
 const Footer = () => {
   const { removeAllItems } = useItems();
   return (
-    <div className="flex justify-end gap-2">
+    <div className="flex justify-end gap-2 border-t border-border pt-4">
       <ConfirmDialogBase
         title="Tem certeza que deseja excluir todos os itens da lista?"
         description="Essa ação será irreversível"

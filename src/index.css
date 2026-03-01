@@ -39,30 +39,30 @@
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --background: 340 20% 8%;
+    --foreground: 350 30% 90%;
+    --card: 340 15% 12%;
+    --card-foreground: 350 30% 90%;
+    --popover: 340 15% 12%;
+    --popover-foreground: 350 30% 90%;
+    --primary: 350 60% 60%;
+    --primary-foreground: 350 100% 98%;
+    --secondary: 340 20% 18%;
+    --secondary-foreground: 350 30% 90%;
+    --muted: 340 15% 18%;
+    --muted-foreground: 350 15% 55%;
+    --accent: 340 20% 18%;
+    --accent-foreground: 350 30% 90%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    --border: 340 15% 20%;
+    --input: 340 15% 20%;
+    --ring: 350 50% 50%;
+    --chart-1: 350 70% 50%;
+    --chart-2: 320 60% 45%;
+    --chart-3: 330 50% 40%;
+    --chart-4: 10 65% 55%;
+    --chart-5: 30 75% 55%;
   }
 }
 
@@ -75,28 +75,29 @@
   }
 }
 
-body {
+html, body, #root {
   height: 100%;
 }
 
-::-webkit-scrollbar {
-  width: 10px;
-}
+@media (pointer: fine) {
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
 
-/* Track */
-::-webkit-scrollbar-track {
-  background: #000;
-  border-radius: 5px;
-}
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #000;
+    border-radius: 5px;
+  }
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #888;
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+  }
 
-  border-radius: 5px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 }

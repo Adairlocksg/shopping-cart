@@ -23,14 +23,20 @@ const ItemList = ({ index, label, checked: checkedProp }: Props) => {
   };
 
   return (
-    <div className="flex gap-2 items-center w-full my-5">
+    <div
+      className={`flex gap-3 items-center w-full bg-card rounded-xl px-4 py-3 shadow-sm transition-all duration-200 animate-in fade-in slide-in-from-bottom-2 ${
+        checked ? "opacity-60" : ""
+      }`}
+    >
       <CheckboxBase
         id={`${label}_${index}`}
         checked={checked}
         onClick={handleCheckItem}
       />
       <Label
-        className={`text-lg flex-1 ${checked ? "line-through" : ""}`}
+        className={`text-base flex-1 transition-all duration-200 ${
+          checked ? "line-through text-muted-foreground" : ""
+        }`}
         htmlFor={`${label}_${index}`}
       >
         {label}
@@ -39,8 +45,8 @@ const ItemList = ({ index, label, checked: checkedProp }: Props) => {
         title="Você tem certeza que deseja excluir esse item?"
         description=" O item será excluido permanentemente."
         trigger={
-          <Button variant="destructive">
-            <TrashIcon />
+          <Button variant="ghost" size="icon" className="text-destructive hover:text-destructive hover:bg-destructive/10">
+            <TrashIcon className="h-4 w-4" />
           </Button>
         }
         onConfirm={() => removeItem(index)}
